@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "src/CloudBees.OpenFeature.Provider", "src/CloudBees.OpenFeature.Provider\CloudBees.OpenFeature.Provider.csproj", "{529C9F18-B44B-406B-8F51-8F465A2409FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{06EA1E81-7085-4F85-86BF-258E4837121C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{1C5526BB-BF1F-4E34-9F33-489B652C161E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "samples/CloudBees.OpenFeature.Provider.Samples.AspNetCore", "samples/CloudBees.OpenFeature.Provider.Samples.AspNetCore\CloudBees.OpenFeature.Provider.Samples.AspNetCore.csproj", "{0ED5825E-0CA1-469C-BB5D-47BD56ACFCDA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{529C9F18-B44B-406B-8F51-8F465A2409FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{529C9F18-B44B-406B-8F51-8F465A2409FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{529C9F18-B44B-406B-8F51-8F465A2409FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{529C9F18-B44B-406B-8F51-8F465A2409FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ED5825E-0CA1-469C-BB5D-47BD56ACFCDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ED5825E-0CA1-469C-BB5D-47BD56ACFCDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ED5825E-0CA1-469C-BB5D-47BD56ACFCDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ED5825E-0CA1-469C-BB5D-47BD56ACFCDA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{529C9F18-B44B-406B-8F51-8F465A2409FE} = {06EA1E81-7085-4F85-86BF-258E4837121C}
+		{0ED5825E-0CA1-469C-BB5D-47BD56ACFCDA} = {1C5526BB-BF1F-4E34-9F33-489B652C161E}
+	EndGlobalSection
+EndGlobal
