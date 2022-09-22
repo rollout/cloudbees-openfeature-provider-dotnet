@@ -19,13 +19,13 @@ You can configure the CloudBees provider by doing the following:
 
 Console app
 ```csharp
-import {OpenFeature} from '@openfeature/nodejs-sdk';
-import {CloudbeesProvider} from 'cloudbees-openfeature-provider-node'
+using CloudBees.OpenFeature.Provider;
+using OpenFeatureSDK = OpenFeature.SDK.OpenFeature;
 
-const appKey = 'INSERT_APP_KEY_HERE'
-OpenFeature.setProvider(await CloudbeesProvider.build(appKey));
-const client = OpenFeature.getClient();
-const value = await client.getBooleanValue('enabled-new-feature', false);
+CloudBeesProvider.Setup("API_KEY_GOES_HERE").Wait();
+OpenFeatureSDK.Instance.SetProvider(new CloudBeesProvider());
+var client = OpenFeatureSDK.Instance.GetClient();
+var myCoolFlag = await client.GetBooleanValue("My_Cool_Flag", false);
 ```
 
 AspNetCore app
