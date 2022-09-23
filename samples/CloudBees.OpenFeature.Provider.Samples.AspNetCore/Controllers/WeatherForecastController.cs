@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using OpenFeature.SDK;
+using OpenFeatureSDK;
 
 namespace CloudBees.OpenFeature.Provider.Samples.AspNetCore.Controllers;
 

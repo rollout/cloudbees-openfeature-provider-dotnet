@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OpenFeature" Version="0.1.5" />
+    <PackageReference Include="OpenFeature" Version="0.2.3" />
     <PackageReference Include="rox-server" Version="5.1.9" />
   </ItemGroup>
 

@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Io.Rollout.Rox.Core.Context;
 using Io.Rollout.Rox.Server;
-using OpenFeature.SDK;
-using OpenFeature.SDK.Model;
+using OpenFeatureSDK;
+using OpenFeatureSDK.Model;
 
 namespace CloudBees.OpenFeature.Provider
 {
