@@ -1,0 +1,40 @@
+name: Build and release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release-package:
+    runs-on: windows-latest
+
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        id: release
+        with:
+          command: manifest
+          token: ${{secrets.GITHUB_TOKEN}}
+          default-branch: main
+
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install dependencies
+        run: dotnet restore
+
+      - name: Build
+        run: |
+          dotnet build --configuration Release --no-restore -p:Deterministic=true
+          tree
+      - name: Pack
+        if: ${{ steps.release.outputs.releases_created }}
+        run:  |
+          dotnet pack --configuration Release --no-build # -p:PackageID=OpenFeature
+      - name: Publish to Nuget
+        if: ${{ steps.release.outputs.releases_created }}
+        run: |
+          dotnet nuget push src/CloudBees.OpenFeature.Provider/bin/Release/CloudBees.OpenFeature.Provider.${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}.nupkg `
+            --api-key ${{secrets.NUGET_TOKEN}} `
+            --source https://api.nuget.org/v3/index.json
