@@ -3,5 +3,9 @@
     <IsPackable>true</IsPackable>
     <VersionNumber>0.1.1</VersionNumber> <!--x-release-please-version -->
     <Version>$(VersionNumber)</Version>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/rollout/cloudbees-openfeature-provider-dotnet</RepositoryUrl>
+    <Description>An OpenFeature provider for CloudBees Feature Management</Description>
+    <PackageTags>Feature;OpenFeature;Flags;CloudBees</PackageTags>
   </PropertyGroup>
 </Project>
