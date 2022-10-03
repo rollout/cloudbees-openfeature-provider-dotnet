@@ -76,3 +76,5 @@ public class WeatherForecastController : ControllerBase
         }
     }
 ```
+
+Thank you to [Ben Evenson](https://github.com/benjiro) for the initial implementation
