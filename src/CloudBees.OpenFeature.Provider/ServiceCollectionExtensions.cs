@@ -1,6 +1,6 @@
 ﻿using System;
 using CloudBees.OpenFeature.Provider;
-using OpenFeatureSDK;
+using OpenFeature;
 
 // ReSharper disable once CheckNamespace
 namespace Microsoft.Extensions.DependencyInjection
@@ -18,8 +18,8 @@ namespace Microsoft.Extensions.DependencyInjection
             }
 
             CloudBeesProvider.Setup(cloudBeesOptions.ApiKey).Wait();
-            OpenFeature.Instance.SetProvider(new CloudBeesProvider());
-            services.AddSingleton(provider => OpenFeature.Instance.GetClient());
+            Api.Instance.SetProvider(new CloudBeesProvider());
+            services.AddSingleton(provider => Api.Instance.GetClient());
         }
     }
 }
