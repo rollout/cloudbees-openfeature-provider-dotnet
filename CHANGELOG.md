@@ -5,7 +5,7 @@
 
 ### Features
 
-* Upgrade to SDK 0.5.0. ([14580e0](https://github.com/rollout/cloudbees-openfeature-provider-dotnet/commit/14580e0b6a28d2f3d29b979c8881478e7c5b980c))
+* Upgrade to SDK 0.5.0. ([1adb2cf](https://github.com/rollout/cloudbees-openfeature-provider-dotnet/commit/1adb2cf4d57e47898a733c491578904b16a16b33))
 
 ## [0.1.2](https://github.com/rollout/cloudbees-openfeature-provider-dotnet/compare/v0.1.1...v0.1.2) (2022-10-03)
 
