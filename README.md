@@ -1,4 +1,4 @@
-# cloudbees-openfeature-provider-dotnet
+# CloudBees Feature Management provider for OpenFeature
 
 This is the [CloudBees](https://www.cloudbees.com/products/feature-management) provider implementation for [OpenFeature](https://openfeature.dev/) for the [dotnet SDK](https://github.com/open-feature/dotnet-sdk).
 
