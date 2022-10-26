@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.0](https://github.com/rollout/cloudbees-openfeature-provider-dotnet/compare/v0.5.0...v1.0.0) (2022-10-26)
+
+
+### Features
+
+* Upgrade to OpenFeature SDK 1.0.0 ([5617138](https://github.com/rollout/cloudbees-openfeature-provider-dotnet/commit/56171380e5ebf4647679148f587b04ed5e0f10a1))
+
 ## [0.5.0](https://github.com/rollout/cloudbees-openfeature-provider-dotnet/compare/v0.1.2...v0.5.0) (2022-10-17)
 
 
