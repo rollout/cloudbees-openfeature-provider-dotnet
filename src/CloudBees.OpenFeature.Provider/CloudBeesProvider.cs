@@ -5,26 +5,45 @@ using System.Threading.Tasks;
 using Io.Rollout.Rox.Core.Context;
 using Io.Rollout.Rox.Server;
 using OpenFeature;
+using OpenFeature.Constant;
 using OpenFeature.Model;
 
 namespace CloudBees.OpenFeature.Provider
 {
     public class CloudBeesProvider : FeatureProvider
     {
+        private readonly CloudBeesOptions _options;
+        private ProviderStatus _providerStatus = ProviderStatus.NotReady;
         private readonly Metadata _metadata = new Metadata("CloudBees Provider");
 
-        /// <summary>
-        /// Call this once before using the provider.
-        /// </summary>
-        /// <param name="appKey">The application key from app.rollout.io</param>
-        public static async Task Setup(string appKey) => await Rox.Setup(appKey);
+        public CloudBeesProvider(CloudBeesOptions options)
+        {
+            if (string.IsNullOrEmpty(options.ApiKey))
+            {
+                throw new ArgumentNullException(nameof(options.ApiKey));
+            }
+
+            _options = options;
+        }
+
+        public override async Task Initialize(EvaluationContext context)
+        {
+            await Rox.Setup(_options.ApiKey);
+            _providerStatus = Rox.State == RoxState.Corrupted ? ProviderStatus.Error : ProviderStatus.Ready;
+        }
 
         /// <summary>
         /// Call this once when shutting down the application.
         /// </summary>
-        public static async Task Shutdown() => await Rox.Shutdown();
+        public override async Task Shutdown()
+        {
+            await Rox.Shutdown();
+            _providerStatus = ProviderStatus.NotReady;
+        }
 
         public override Metadata GetMetadata() => _metadata;
+        
+        public override ProviderStatus GetStatus() => _providerStatus;
 
         public override Task<ResolutionDetails<bool>> ResolveBooleanValue(string flagKey, bool defaultValue, EvaluationContext context = null)
         {

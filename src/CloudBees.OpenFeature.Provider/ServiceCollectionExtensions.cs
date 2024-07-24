@@ -17,8 +17,7 @@ namespace Microsoft.Extensions.DependencyInjection
                 throw new ApplicationException("Missing CloudBees API Key");
             }
 
-            CloudBeesProvider.Setup(cloudBeesOptions.ApiKey).Wait();
-            Api.Instance.SetProvider(new CloudBeesProvider());
+            Api.Instance.SetProviderAsync(new CloudBeesProvider(cloudBeesOptions));
             services.AddSingleton(provider => Api.Instance.GetClient());
         }
     }

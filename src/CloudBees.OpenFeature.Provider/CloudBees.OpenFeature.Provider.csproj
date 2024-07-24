@@ -5,8 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OpenFeature" Version="[1.0.1, 2.0.0)" />
-    <PackageReference Include="rox-server" Version="5.1.9" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="[1.0.0, 9.0.0)" />
+    <PackageReference Include="OpenFeature" Version="[1.5.1, 2.0.0)" />
+    <PackageReference Include="rox-server" Version="5.1.11" />
   </ItemGroup>
 
 </Project>
