@@ -22,8 +22,8 @@ Console app
 using CloudBees.OpenFeature.Provider;
 using OpenFeatureSDK = OpenFeature.SDK.OpenFeature;
 
-CloudBeesProvider.Setup("API_KEY_GOES_HERE").Wait();
-OpenFeatureSDK.Instance.SetProvider(new CloudBeesProvider());
+var options = new CloudBeesOptions{ ApiKey = API_KEY_GOES_HERE };
+await OpenFeatureSDK.Instance.SetProviderAsync(new CloudBeesProvider(options));
 var client = OpenFeatureSDK.Instance.GetClient();
 var myCoolFlag = await client.GetBooleanValue("My_Cool_Flag", false);
 ```
