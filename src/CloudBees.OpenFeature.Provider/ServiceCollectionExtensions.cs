@@ -1,8 +1,9 @@
 ﻿using System;
 using CloudBees.OpenFeature.Provider;
 using OpenFeature;
+using Microsoft.Extensions.DependencyInjection;
+using System.Threading.Tasks;
 
-// ReSharper disable once CheckNamespace
 namespace Microsoft.Extensions.DependencyInjection
 {
     public static class ServiceCollectionExtensions
@@ -17,9 +18,15 @@ namespace Microsoft.Extensions.DependencyInjection
                 throw new ApplicationException("Missing CloudBees API Key");
             }
 
-            CloudBeesProvider.Setup(cloudBeesOptions.ApiKey).Wait();
-            Api.Instance.SetProvider(new CloudBeesProvider());
-            services.AddSingleton(provider => Api.Instance.GetClient());
+            var provider = new CloudBeesProvider(cloudBeesOptions.ApiKey);
+
+            // Set the provider using async lifecycle call
+            Task.Run(async () =>
+            {
+                await Api.Instance.SetProviderAsync(provider);
+            }).GetAwaiter().GetResult();
+
+            services.AddSingleton(_ => Api.Instance.GetClient());
         }
     }
 }
