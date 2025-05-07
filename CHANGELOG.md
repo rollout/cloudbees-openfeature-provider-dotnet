@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/rollout/cloudbees-openfeature-provider-dotnet/compare/v2.0.0...v2.0.1) (2025-05-07)
+
+
+### Bug Fixes
+
+* trigger patch release ([25906fb](https://github.com/rollout/cloudbees-openfeature-provider-dotnet/commit/25906fb16ab15fd4bf53e89412d3f609ae266c6b))
+
 ## [2.0.0](https://github.com/rollout/cloudbees-openfeature-provider-dotnet/compare/v1.0.1...v2.0.0) (2025-04-08)
 
 

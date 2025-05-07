@@ -1,7 +1,7 @@
 <Project>
   <PropertyGroup>
     <IsPackable>true</IsPackable>
-    <VersionNumber>2.0.0</VersionNumber> <!--x-release-please-version -->
+    <VersionNumber>2.0.1</VersionNumber> <!--x-release-please-version -->
     <Version>$(VersionNumber)</Version>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/rollout/cloudbees-openfeature-provider-dotnet</RepositoryUrl>
