@@ -17,6 +17,11 @@ jobs:
           token: ${{secrets.GITHUB_TOKEN}}
           default-branch: main
 
+      - name: Debug release outputs
+        run: |
+          echo "releases_created: ${{ steps.release.outputs.releases_created }}"
+          echo "version: ${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}"
+
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
@@ -29,11 +34,12 @@ jobs:
           dotnet build --configuration Release --no-restore -p:Deterministic=true
           tree
       - name: Pack
-        if: ${{ steps.release.outputs.releases_created }}
-        run:  |
-          dotnet pack --configuration Release --no-build # -p:PackageID=OpenFeature
+        if: ${{ steps.release.outputs.releases_created == 'true' }}
+        run: |
+          dotnet pack --configuration Release --no-build
+
       - name: Publish to Nuget
-        if: ${{ steps.release.outputs.releases_created }}
+        if: ${{ steps.release.outputs.releases_created == 'true' }}
         run: |
           dotnet nuget push src/CloudBees.OpenFeature.Provider/bin/Release/CloudBees.OpenFeature.Provider.${{ steps.release.outputs.major }}.${{ steps.release.outputs.minor }}.${{ steps.release.outputs.patch }}.nupkg `
             --api-key ${{secrets.NUGET_TOKEN}} `
