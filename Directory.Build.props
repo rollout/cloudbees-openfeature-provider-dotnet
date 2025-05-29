@@ -6,6 +6,8 @@
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/rollout/cloudbees-openfeature-provider-dotnet</RepositoryUrl>
     <Description>An OpenFeature provider for CloudBees Feature Management</Description>
+    <PackageProjectUrl>https://www.cloudbees.com/capabilities/feature-management</PackageProjectUrl>
+    <PackageLicenseExpression>APACHE-2.0</PackageLicenseExpression>
     <PackageTags>Feature;OpenFeature;Flags;CloudBees</PackageTags>
   </PropertyGroup>
 </Project>
