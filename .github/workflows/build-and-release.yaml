@@ -8,7 +8,7 @@ on:
 jobs:
   release-package:
     runs-on:
-      group: windows-runners
+      group: windows-runner
 
     steps:
       - uses: google-github-actions/release-please-action@v3
