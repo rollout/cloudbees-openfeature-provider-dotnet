@@ -3,11 +3,11 @@ name: Build and release
 on:
   push:
     branches:
-      - main
+      - "*"
 
 jobs:
   release-package:
-    runs-on: windows-latest
+    runs-on: windows-runners
 
     steps:
       - uses: google-github-actions/release-please-action@v3
